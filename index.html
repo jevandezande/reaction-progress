@@ -1,0 +1,118 @@
+<head>
+	<title>Reaction Progress</title>
+	<link rel="stylesheet" type="text/css" href="reaction_progress.css"></link>
+	<script type="text/javascript" src='reaction_progress.js'></script>
+</head>
+
+<body onload="init()">
+
+<div class="title">
+    Reaction Progress
+</div>
+
+<div class="questionmark" onclick="window.location.href='directions.html'">
+    ?
+</div>
+
+<div class="reactionandslider">
+	<!--Shows reaction that is being conducted and includes changeable coefficients-->
+	<div class="reaction">
+		<input type="text" id="coefficientA" size="2" maxlength="5" value=2 onchange="coefficientUpdate(-this.value,0)">
+		A +
+		<input type="text" id="coefficientB" size="2" maxlength="5" value=1 onchange="coefficientUpdate(-this.value,1)">
+		B +
+		<input type="text" id="coefficientC" size="2" maxlength="5" value=0 onchange="coefficientUpdate(-this.value,2)">
+		C
+		&hArr;
+		<input type="text" id="coefficientX" size="2" maxlength="5" value=2 onchange="coefficientUpdate(this.value,3)">
+		X +
+		<input type="text" id="coefficientY" size="2" maxlength="5" value=0 onchange="coefficientUpdate(this.value,4)">
+		Y +
+		<input type="text" id="coefficientZ" size="2" maxlength="5" value=0 onchange="coefficientUpdate(this.value,5)">
+		Z
+	</div>
+
+	<div class="myslider">
+		Reaction Progress Slider<br/>
+		<input id="completionSlider" type="range" min="0" max="100" value="0" step="1" onchange="sliderUpdate(this.value)"/>
+	</div>
+</div>
+
+<table class="extenttable">
+	<tr>
+		<td>Extent of Reaction, &xi;</td>
+		<td class="extent"><input type="text" id="extentMoles" size="5" maxlength="7" value=1 onchange="extentUpdate(this.value)"> moles</td>
+	</tr>
+	<tr>
+		<td>Percent Complete</td>
+		<td id="percentcomplete">0%</td>
+	</tr>
+</table>
+
+<div class="mode">
+	<input type="radio" name="mode" value="mole" onchange="modeUpdate('mole')" checked>Mole Mode
+	<br />
+	<input type="radio" name="mode" value="mass" onchange="modeUpdate('mass')">Mass Mode
+</div>
+
+<div>
+<table class="prtable">
+	<thead>
+		<tr>
+			<th></th>
+			<th>A</th>
+			<th>B</th>
+			<th>C</th>
+			<th>X</th>
+			<th>Y</th>
+			<th>Z</th>
+		<tr>
+	</thead>
+	<tbody>
+		<tr id="molarMass" hidden>
+			<td>Molar Mass (g/mol)</td>
+			<td id="molarMassA"><input id="molarMassAInput" type="text" size="5" maxlength="5" value=1 onchange="molarMassUpdate(this.value,0)"></td>
+			<td id="molarMassB"><input id="molarMassBInput" type="text" size="5" maxlength="5" value=1 onchange="molarMassUpdate(this.value,1)"></td>
+			<td id="molarMassC"><input id="molarMassCInput" type="text" size="5" maxlength="5" value=1 onchange="molarMassUpdate(this.value,2)"></td>
+			<td id="molarMassX"><input id="molarMassXInput" type="text" size="5" maxlength="5" value=1 onchange="molarMassUpdate(this.value,3)"></td>
+			<td id="molarMassY"><input id="molarMassYInput" type="text" size="5" maxlength="5" value=1 onchange="molarMassUpdate(this.value,4)"></td>
+			<td id="molarMassZ"><input id="molarMassZInput" type="text" size="5" maxlength="5" value=1 onchange="molarMassUpdate(this.value,5)"></td>
+		</tr>
+		<tr class="initial">
+			<td id="initial">Initial (moles)</td>
+			<td id="initialA"><input id="initialAInput" type="text" size="5" maxlength="5" value=1 onchange="initialAmountUpdate(this.value,0)"></td>
+			<td id="initialB"><input id="initialBInput" type="text" size="5" maxlength="5" value=1 onchange="initialAmountUpdate(this.value,1)"></td>
+			<td id="initialC"><input id="initialCInput" type="text" size="5" maxlength="5" value=0 onchange="initialAmountUpdate(this.value,2)"></td>
+			<td id="initialX"><input id="initialXInput" type="text" size="5" maxlength="5" value=0 onchange="initialAmountUpdate(this.value,3)"></td>
+			<td id="initialY"><input id="initialYInput" type="text" size="5" maxlength="5" value=0 onchange="initialAmountUpdate(this.value,4)"></td>
+			<td id="initialZ"><input id="initialZInput" type="text" size="5" maxlength="5" value=0 onchange="initialAmountUpdate(this.value,5)"></td>
+		</tr>
+		<tr class="change">
+			<td id="change">Change (moles)</td>
+			<td id="changeA">0</td>
+			<td id="changeB">0</td>
+			<td id="changeC">0</td>
+			<td id="changeX">0</td>
+			<td id="changeY">0</td>
+			<td id="changeZ">0</td>
+		</tr>
+		<tr class="end">
+			<td id="end">End (moles)</td>
+			<td id="endA">1</td>
+			<td id="endB">1</td>
+			<td id="endC">0</td>
+			<td id="endX">0</td>
+			<td id="endY">0</td>
+			<td id="endZ">0</td>
+		</tr>
+	</tbody>
+</table>
+
+<canvas id="canvas1" class="graph" height="400" width="500">
+	<p>Your browser doesn't support the HTML5 canvas element. Please upgrade your browser</p>
+</canvas>
+
+<canvas id="canvas2" class="graph" height="400" width="500">
+	<p>Your browser doesn't support the HTML5 canvas element. Please upgrade your browser</p>
+</canvas>
+</div>

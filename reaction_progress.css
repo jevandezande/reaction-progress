@@ -1,0 +1,138 @@
+body
+{
+	background: #f3f3f3;
+}
+
+.title
+{
+	font-weight: bold;
+	font-size: 2em;
+	float: left;
+}
+
+.questionmark
+{
+	width: 22px;
+	height: 22px;
+	text-align: center;
+	font-weight: bold;
+	float: right;
+	padding: 0;
+	margin: 5px;
+	border: 2px solid BLACK;
+	border-radius: 15px;
+}
+
+.questionmark: hover
+{
+	background: #ffffff;
+	cursor: pointer;
+}
+
+.reaction
+{
+	font-weight: bold;
+	padding: 7px;
+	margin: 10px;
+	border: 3px solid #0000aa;
+	border-radius: 7px;
+}
+
+.myslider
+{
+	width: 150px;
+	margin: 10px auto;
+}
+
+.reactionandslider
+{
+	float: left;
+	clear: left;
+	margin: 5px;
+}
+
+/*
+ * Tables
+ */
+table
+{
+	border: 1px solid black;
+	margin: 5px;
+	box-shadow: 2px 2px 3px BLACK;
+}
+
+th, td
+{
+	margin: 10px;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+.extenttable
+{
+	float: left;
+}
+
+.prtable
+{
+	float: left;
+	clear: left;
+}
+
+.extenttable td
+{
+	width: 110px;
+}
+
+.extenttable tr td: first-child
+{
+	min-width: 130px;
+}
+
+.prtable td
+{
+	width: 70px;
+}
+
+.prtable tr td: first-child
+{
+	min-width: 100px;
+}
+
+/*
+ * Inputs
+ */
+input
+{
+	background: #ffffff;
+}
+
+/*
+ * Canvases
+ */
+.graph
+{
+	border: 1px solid black;
+	margin: 5px;
+	float: left;
+	box-shadow: 2px 2px 3px BLACK;
+}
+
+#canvas1
+{
+	clear: left;
+}
+
+/*
+ * Other
+ */
+.mode
+{
+	margin: 10px;
+	float: left;
+}
+
+.directions
+{
+	max-width: 800px;
+}
